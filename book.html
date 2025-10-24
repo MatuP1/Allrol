@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reserva una sesion | All rol - Cafe</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: '#10B981',
+              secondary: '#6B7280',
+            }
+          }
+        }
+      }
+    </script>
+</head>
+<body class="bg-gray-50 min-h-screen flex flex-col">
+    <custom-navbar></custom-navbar>
+    
+    <main class="flex-grow container mx-auto px-4 py-8">
+        <div class="max-w-6xl mx-auto">
+            <h1 class="text-3xl font-bold text-gray-800 mb-2">Reserva una sesion con tu Game Master</h1>
+            <p class="text-gray-600 mb-8">Selecciona tu Game Master preferido y el horario disponible</p>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- GM Profile -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden md:sticky md:top-8">
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <img class="w-16 h-16 rounded-full object-cover mr-4" src="http://static.photos/gaming/200x200/42" alt="Game Master">
+                            <div>
+                                <h3 class="font-bold text-gray-800">Dragon Slayer Dave</h3>
+                                <div class="flex items-center text-yellow-400 text-sm mt-1">
+                                    <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                    <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                    <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                    <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                    <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                    <span class="text-gray-600 ml-1">(47 reviews)</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <h4 class="font-semibold text-gray-700 mb-2">Especialidades</h4>
+                            <div class="flex flex-wrap gap-2">
+                                <span class="bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full">D&D 5e</span>
+                                <span class="bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full">Pathfinder</span>
+                                <span class="bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full">Call of Cthulhu</span>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <h4 class="font-semibold text-gray-700 mb-2">Idiomas</h4>
+                            <p class="text-sm text-gray-600">Inglés, Español</p>
+                        </div>
+                        
+                        <div>
+                            <h4 class="font-semibold text-gray-700 mb-2">Acerca de</h4>
+                            <p class="text-sm text-gray-600">Con más de 5 años de experiencia dirigiendo juegos de mesa, me especializo en narrativas inmersivas y encuentros de combate dinámicos. ¡Déjame crear tu próxima aventura inolvidable!</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Booking Form -->
+                <div class="md:col-span-2 bg-white rounded-xl shadow-md overflow-hidden">
+                    <div class="p-6">
+                        <h2 class="text-xl font-bold text-gray-800 mb-6">Selecciona los Detalles de la Sesión</h2>
+                        
+                        <form id="bookingForm">
+                            <!-- Game Selection -->
+                            <div class="mb-6">
+                                <label class="block text-gray-700 font-medium mb-2" for="game">Sistema de Juego</label>
+                                <select id="game" name="game" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary">
+                                    <option value="" disabled selected>Selecciona un sistema de juego</option>
+                                    <option value="dnd5e">Dungeons & Dragons 5e</option>
+                                    <option value="pathfinder">Pathfinder 2e</option>
+                                    <option value="cthulhu">Call of Cthulhu</option>
+                                    <option value="shadowrun">Shadowrun</option>
+                                </select>
+                            </div>
+                            
+                            <!-- Session Type -->
+                            <div class="mb-6">
+                                <label class="block text-gray-700 font-medium mb-2">Tipo de Sesión</label>
+                                <div class="grid grid-cols-2 gap-4">
+                                    <div>
+                                        <input type="radio" id="one-shot" name="session-type" value="one-shot" class="hidden peer" checked>
+                                        <label for="one-shot" class="flex flex-col items-center justify-center p-4 border border-gray-300 rounded-lg cursor-pointer peer-checked:border-primary peer-checked:bg-green-50">
+                                            <i data-feather="zap" class="w-6 h-6 text-primary mb-2"></i>
+                                            <span class="font-medium">One-Shot</span>
+                                            <span class="text-sm text-gray-500">3-4 hours</span>
+                                        </label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="campaign" name="session-type" value="campaign" class="hidden peer">
+                                        <label for="campaign" class="flex flex-col items-center justify-center p-4 border border-gray-300 rounded-lg cursor-pointer peer-checked:border-primary peer-checked:bg-green-50">
+                                            <i data-feather="book-open" class="w-6 h-6 text-primary mb-2"></i>
+                                            <span class="font-medium">Campaña</span>
+                                            <span class="text-sm text-gray-500">Múltiples sesiones</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Date Selection -->
+                            <div class="mb-6">
+                                <label class="block text-gray-700 font-medium mb-2" for="date">Selecciona la Fecha</label>
+                                <div class="relative">
+                                    <input type="date" id="date" name="date" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary" min="">
+                                    <i data-feather="calendar" class="absolute right-3 top-2.5 text-gray-400 pointer-events-none"></i>
+                                </div>
+                            </div>
+                            
+                            <!-- Time Slot Selection -->
+                            <div class="mb-6">
+                                <label class="block text-gray-700 font-medium mb-2">Franja Horaria Disponible</label>
+                                <div class="grid grid-cols-3 gap-3">
+                                    <div>
+                                        <input type="radio" id="slot1" name="time-slot" value="10:00-14:00" class="hidden peer">
+                                        <label for="slot1" class="block p-3 border border-gray-300 rounded-lg text-center cursor-pointer peer-checked:border-primary peer-checked:bg-green-50">
+                                            10:00 - 14:00
+                                        </label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="slot2" name="time-slot" value="14:00-18:00" class="hidden peer">
+                                        <label for="slot2" class="block p-3 border border-gray-300 rounded-lg text-center cursor-pointer peer-checked:border-primary peer-checked:bg-green-50">
+                                            14:00 - 18:00
+                                        </label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="slot3" name="time-slot" value="18:00-22:00" class="hidden peer">
+                                        <label for="slot3" class="block p-3 border border-gray-300 rounded-lg text-center cursor-pointer peer-checked:border-primary peer-checked:bg-green-50">
+                                            18:00 - 22:00
+                                        </label>
+                                    </div>
+                                    <div>
+                                        <input type="radio" id="slot4" name="time-slot" value="10:00-18:00" class="hidden peer">
+                                        <label for="slot4" class="block p-3 border border-gray-300 rounded-lg text-center cursor-pointer peer-checked:border-primary peer-checked:bg-green-50">
+                                            10:00 - 18:00
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Player Count -->
+                            <div class="mb-6">
+                                <label class="block text-gray-700 font-medium mb-2" for="players">Número de Jugadores</label>
+                                <select id="players" name="players" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4" selected>4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                </select>
+                            </div>
+                            
+                            <!-- Additional Notes -->
+                            <div class="mb-6">
+                                <label class="block text-gray-700 font-medium mb-2" for="notes">Solicitudes Especiales</label>
+                                <textarea id="notes" name="notes" rows="3" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary" placeholder="Any special requests or information about your group..."></textarea>
+                            </div>
+                            
+                            <div class="border-t border-gray-200 pt-6">
+                                <div class="flex justify-between items-center mb-6">
+                                    <span class="font-medium text-gray-700">Precio Final</span>
+                                    <span class="text-xl font-bold text-primary">$60.00</span>
+                                </div>
+                                
+                                <button type="submit" class="w-full bg-primary hover:bg-green-700 text-white font-medium py-3 px-4 rounded-lg shadow transition duration-300 flex items-center justify-center">
+                                    <i data-feather="credit-card" class="mr-2"></i>
+                                    Confirmar Reserva
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <custom-footer></custom-footer>
+
+    <script src="components/navbar.js"></script>
+    <script src="components/footer.js"></script>
+    <script src="script.js"></script>
+    <script>
+        feather.replace();
+        
+        // Set minimum date to today
+        document.getElementById('date').min = new Date().toISOString().split('T')[0];
+        
+        // Handle form submission
+        document.getElementById('bookingForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            // Here you would normally send the booking data to your server
+            alert('Booking request submitted successfully! The Game Master will contact you to confirm details.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>

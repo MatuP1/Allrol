@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All rol - Cafe - Encuentra un Game Master</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: '#10B981',
+              secondary: '#6B7280',
+            }
+          }
+        }
+      }
+    </script>
+</head>
+<body class="bg-gray-50 min-h-screen flex flex-col">
+    <custom-navbar></custom-navbar>
+    
+    <main class="flex-grow container mx-auto px-4 py-8">
+        <!-- Hero Section -->
+        <section class="text-center mb-16">
+            <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">Tu Aventura Te Espera</h1>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto mb-8">Encuentra el Game Master perfecto para tu próxima sesión de rol entre amigos</p>
+            <a href="/book.html" class="bg-primary hover:bg-green-600 text-white font-bold py-3 px-8 rounded-lg shadow-lg transition duration-300 inline-flex items-center">
+                Reserva una Sesión <i data-feather="arrow-right" class="ml-2"></i>
+            </a>
+        </section>
+
+        <!-- Featured GM -->
+        <section class="mb-16">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6">Nuestros Game Masters Destacados</h2>
+            <div class="bg-white rounded-xl shadow-md overflow-hidden max-w-4xl mx-auto">
+                <div class="md:flex">
+                    <div class="md:flex-shrink-0">
+                        <img class="h-48 w-full md:h-full md:w-48 object-cover" src="http://static.photos/gaming/640x360/42" alt="Game Master">
+                    </div>
+                    <div class="p-8">
+                        <div class="uppercase tracking-wide text-sm text-primary font-semibold mb-1">Disponible Ahora</div>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Dragon Slayer Dave</h3>
+                        <p class="text-secondary mb-4">5 years experience | 200+ sessions hosted</p>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full">D&D 5e</span>
+                            <span class="bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full">Pathfinder</span>
+                            <span class="bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full">Call of Cthulhu</span>
+                        </div>
+                        <p class="text-gray-600 mb-6">Historias inmersivas y combates dinámicos. ¡Déjame crear tu próxima aventura inolvidable!</p>
+                        <a href="/book.html" class="inline-flex items-center text-primary font-medium hover:text-green-700">
+                            Reserva una sesión <i data-feather="chevron-right" class="ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works -->
+        <section class="mb-16">
+            <h2 class="text-2xl font-bold text-gray-800 mb-8 text-center">Cómo Funciona</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-sm text-center">
+                    <div class="bg-primary bg-opacity-10 text-primary rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                        <i data-feather="search" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="font-bold text-gray-800 mb-2">Encuentra tu GM</h3>
+                    <p class="text-secondary">Explora nuestros Game Masters experimentados y sus especialidades</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm text-center">
+                    <div class="bg-primary bg-opacity-10 text-primary rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                        <i data-feather="calendar" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="font-bold text-gray-800 mb-2">Reserva una Sesión</h3>
+                    <p class="text-secondary">Elige una fecha y hora que funcione para tu grupo</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-sm text-center">
+                    <div class="bg-primary bg-opacity-10 text-primary rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                        <i data-feather="users" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="font-bold text-gray-800 mb-2">Juega y Disfruta</h3>
+                    <p class="text-secondary">Únete a la sesión y embarca en tu aventura</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <custom-footer></custom-footer>
+
+    <script src="components/navbar.js"></script>
+    <script src="components/footer.js"></script>
+    <script src="script.js"></script>
+    <script>
+        feather.replace();
+    </script>
+<script src="https://deepsite.hf.co/deepsite-badge.js"></script>
+</body>
+</html>

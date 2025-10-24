@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuestros GM | All rol - Cafe</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: '#10B981',
+              secondary: '#6B7280',
+            }
+          }
+        }
+      }
+    </script>
+</head>
+<body class="bg-gray-50 min-h-screen flex flex-col">
+    <custom-navbar></custom-navbar>
+    
+    <main class="flex-grow container mx-auto px-4 py-8">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-8">
+                <div>
+                    <h1 class="text-3xl font-bold text-gray-800 mb-2">Nuestros Game Masters</h1>
+                    <p class="text-gray-600">Narradores profesionales listos para guiar tus aventuras</p>
+                </div>
+                <div class="mt-4 md:mt-0">
+                    <div class="relative">
+                        <input type="text" placeholder="Buscar GMs..." class="pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary w-full md:w-64">
+                        <i data-feather="search" class="absolute left-3 top-2.5 text-gray-400"></i>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Filter Bar -->
+            <div class="bg-white rounded-lg shadow-sm p-4 mb-8">
+                <div class="flex flex-wrap items-center gap-4">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Sistemas de Juego</label>
+                        <select class="w-full md:w-48 px-3 py-2 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary text-sm">
+                            <option>Todos los Sistemas</option>
+                            <option>D&D 5e</option>
+                            <option>Pathfinder</option>
+                            <option>Call of Cthulhu</option>
+                            <option>Shadowrun</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Idioma</label>
+                        <select class="w-full md:w-48 px-3 py-2 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary text-sm">
+                            <option>Cualquier Idioma</option>
+                            <option>Inglés</option>
+                            <option>Español</option>
+                            <option>Francés</option>
+                            <option>Alemán</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-1">Disponibilidad</label>
+                        <select class="w-full md:w-48 px-3 py-2 border border-gray-300 rounded-lg focus:ring-primary focus:border-primary text-sm">
+                            <option>Cualquier Momento</option>
+                            <option>Días de Semana</option>
+                            <option>Fines de Semana</option>
+                            <option>Mañanas</option>
+                            <option>Tardes</option>
+                            <option>Noches</option>
+                        </select>
+                    </div>
+                    <div class="ml-auto">
+                        <button class="bg-primary hover:bg-green-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition duration-300">
+                            Aplicar Filtros
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- GM Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- GM Card 1 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition duration-300">
+                    <div class="relative">
+                        <img class="h-48 w-full object-cover" src="http://static.photos/gaming/640x360/42" alt="Game Master">
+                        <div class="absolute bottom-0 left-0 bg-primary text-white px-3 py-1 text-xs font-bold">
+                            DISPONIBLE HOY
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-start justify-between">
+                            <div class="flex items-center mb-4">
+                                <img class="w-12 h-12 rounded-full object-cover mr-3" src="http://static.photos/gaming/200x200/42" alt="Game Master">
+                                <div>
+                                    <h3 class="font-bold text-gray-800">Dragon Slayer Dave</h3>
+                                    <div class="flex items-center text-yellow-400 text-xs mt-1">
+                                        <i data-feather="star" class="w-3 h-3 fill-current"></i>
+                                        <i data-feather="star" class="w-3 h-3 fill-current"></i>
+                                        <i data-feather="star" class="w-3 h-3 fill-current"></i>
+                                        <i data-feather="star" class="w-3 h-3 fill-current"></i>
+                                        <i data-feather="star" class="w-3 h-3 fill-current"></i>
+                                        <span class="text-gray-600 ml-1">(47)</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <span class="text-xl font-bold text-primary">$60</span>
+                        </div>
+                        
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full">D&D 5e</span>
+                            <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full">Pathfinder</span>
+                            <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full">Call of Cthulhu</span>
+                        </div>
+                        
+                        <p class="text-sm text-gray-600 mb-4">Especializándome en narrativas inmersivas y combates dinámicos. ¡Déjame crear tu próxima aventura inolvidable!</p>
+                        
+                        <div class="flex justify-between items-center">
+                            <div class="flex items-center text-sm text-gray-500">
+                                <i data-feather="globe" class="w-4 h-4 mr-1"></i>
+                                <span>Inglés, Español</span>
+                            </div>
+                            <a href="/book.html" class="text-primary hover:text-green-700 text-sm font-medium inline-flex items-center">
+                                Reservar Ahora <i data-feather="chevron-right" class="w-4 h-4 ml-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- GM Card 2 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition duration-300">
+                    <div class="relative">
+                        <img class="h-48 w-full object-cover" src="http://static.photos/gaming/640x360/43" alt="Game Master">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-start justify-between">
+                            <div class="flex items-center mb-4">
+                                <img class="w-12 h-12 rounded-full object-cover mr-3" src="http://static.photos/gaming/200x200/43" alt="Game Master">
+                                <div>
+                                    <h3 class="font-bold text-gray-800">Mystic Morgan</h3>
+                                    <div class="flex items-center text-yellow-400 text-xs mt-1">
+                                        <i data-feather="star" class="w-3 h-3 fill-current"></i>
+                                        <i data-feather="star" class="w-3 h-3 fill-current"></i>
+                                        <i data-feather="star" class="w-3 h-3 fill-current"></i>
+                                        <i data-feather="star" class="w-3 h-3 fill-current"></i>
+                                        <i data-feather="star" class="w-3 h-3 fill-current"></i>
+                                        <span class="text-gray-600 ml-1">(32)</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <span class="text-xl font-bold text-primary">$55</span>
+                        </div>
+                        
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full">D&D 5e</span>
+                            <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full">Vampire: The Masquerade</span>
+                            <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full">Cyberpunk Red</span>
+                        </div>
+                        
+                        <p class="text-sm text-gray-600 mb-4">Dando vida a la fantasía oscura y el horror urbano con un rico desarrollo de personajes y una narrativa atmosférica.</p>
+                        
+                        <div class="flex justify-between items-center">
+                            <div class="flex items-center text-sm text-gray-500">
+                                <i data-feather="globe" class="w-4 h-4 mr-1"></i>
+                                <span>Inglés, Francés</span>
+                            </div>
+                            <a href="/book.html" class="text-primary hover:text-green-700 text-sm font-medium inline-flex items-center">
+                                Reservar Ahora <i data-feather="chevron-right" class="w-4 h-4 ml-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- GM Card 3 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition duration-300">
+                    <div class="relative">
+                        <img class="h-48 w-full object-cover" src="http://static.photos/gaming/640x360/44" alt="Game Master">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-start justify-between">
+                            <div class="flex items-center mb-4">
+                                <img class="w-12 h-12 rounded-full object-cover mr-3" src="http://static.photos/gaming/200x200/44" alt="Game Master">
+                                <div>
+                                    <h3 class="font-bold text-gray-800">Sci-Fi Steve</h3>
+                                    <div class="flex items-center text-yellow-400 text-xs mt-1">
+                                        <i data-feather="star" class="w-3 h-3 fill-current"></i>
+                                        <i data-feather="star" class="w-3 h-3 fill-current"></i>
+                                        <i data-feather="star" class="w-3 h-3 fill-current"></i>
+                                        <i data-feather="star" class="w-3 h-3 fill-current"></i>
+                                        <i data-feather="star" class="w-3 h-3 fill-current text-gray-300"></i>
+                                        <span class="text-gray-600 ml-1">(28)</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <span class="text-xl font-bold text-primary">$65</span>
+                        </div>
+                        
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full">Starfinder</span>
+                            <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full">Traveller</span>
+                            <span class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full">Shadowrun</span>
+                        </div>
+                        
+                        <p class="text-sm text-gray-600 mb-4">Especializándome en ciencia ficción y entornos cyberpunk con un enfoque en la construcción de mundos detallada y el combate táctico.</p>
+                        
+                        <div class="flex justify-between items-center">
+                            <div class="flex items-center text-sm text-gray-500">
+                                <i data-feather="globe" class="w-4 h-4 mr-1"></i>
+                                <span>Inglés, Alemán</span>
+                            </div>
+                            <a href="/book.html" class="text-primary hover:text-green-700 text-sm font-medium inline-flex items-center">
+                                Reservar Ahora <i data-feather="chevron-right" class="w-4 h-4 ml-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Pagination -->
+            <div class="flex justify-center mt-12">
+                <nav class="inline-flex rounded-md shadow">
+                    <a href="#" class="px-3 py-2 rounded-l-md border border-gray-300 bg-white text-gray-500 hover:bg-gray-50">
+                        <i data-feather="chevron-left" class="w-4 h-4"></i>
+                    </a>
+                    <a href="#" class="px-4 py-2 border-t border-b border-gray-300 bg-white text-primary font-medium">1</a>
+                    <a href="#" class="px-4 py-2 border-t border-b border-gray-300 bg-white text-gray-500 hover:bg-gray-50">2</a>
+                    <a href="#" class="px-4 py-2 border-t border-b border-gray-300 bg-white text-gray-500 hover:bg-gray-50">3</a>
+                    <a href="#" class="px-3 py-2 rounded-r-md border border-gray-300 bg-white text-gray-500 hover:bg-gray-50">
+                        <i data-feather="chevron-right" class="w-4 h-4"></i>
+                    </a>
+                </nav>
+            </div>
+        </div>
+    </main>
+
+    <custom-footer></custom-footer>
+
+    <script src="components/navbar.js"></script>
+    <script src="components/footer.js"></script>
+    <script src="script.js"></script>
+    <script>
+        feather.replace();
+    </script>
+</body>
+</html>

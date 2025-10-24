@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juegos disponibles | All rol - cafe</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: '#10B981',
+              secondary: '#6B7280',
+            }
+          }
+        }
+      }
+    </script>
+</head>
+<body class="bg-gray-50 min-h-screen flex flex-col">
+    <custom-navbar></custom-navbar>
+    
+    <main class="flex-grow container mx-auto px-4 py-8">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-8">
+                <div>
+                    <h1 class="text-3xl font-bold text-gray-800 mb-2">Sistemas de Juego Disponibles</h1>
+                    <p class="text-gray-600">Descubre los sistemas de RPG de mesa en los que se especializan nuestros Game Masters</p>
+                </div>
+                <div class="mt-4 md:mt-0">
+                    <button id="addGameBtn" class="bg-primary hover:bg-green-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition duration-300 hidden">
+                        <i data-feather="plus" class="w-4 h-4 mr-1"></i> Agregar Juego
+                    </button>
+                </div>
+            </div>
+
+            <!-- Games Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Game Card 1 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition duration-300">
+                    <div class="relative">
+                        <img class="h-48 w-full object-cover" src="http://static.photos/gaming/640x360/45" alt="Dungeons & Dragons">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="font-bold text-gray-800 text-xl">Dungeons & Dragons 5e</h3>
+                        </div>
+                        
+                        <div class="flex items-center text-sm text-gray-500 mb-4">
+                            <i data-feather="users" class="w-4 h-4 mr-1"></i>
+                            <span>24 GMs disponibles</span>
+                        </div>
+                        
+                        <p class="text-sm text-gray-600 mb-4">El mejor juego de rol del mundo. Crea personajes heroicos y embarca en épicas aventuras de fantasía.</p>
+                        
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm font-medium text-gray-700">Campañas Populares:</span>
+                            <a href="/gms.html?game=dnd5e" class="text-primary hover:text-green-700 text-sm font-medium inline-flex items-center">
+                                Ver GMs <i data-feather="chevron-right" class="w-4 h-4 ml-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Game Card 2 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition duration-300">
+                    <div class="relative">
+                        <img class="h-48 w-full object-cover" src="http://static.photos/gaming/640x360/46" alt="Pathfinder">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="font-bold text-gray-800 text-xl">Pathfinder 2e</h3>
+                        </div>
+                        
+                        <div class="flex items-center text-sm text-gray-500 mb-4">
+                            <i data-feather="users" class="w-4 h-4 mr-1"></i>
+                            <span>18 GMs available</span>
+                        </div>
+                        
+                        <p class="text-sm text-gray-600 mb-4">Un RPG de fantasía con una profunda personalización de personajes y combate táctico en un rico mundo de fantasía.</p>
+                        
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm font-medium text-gray-700">Campañas Populares:</span>
+                            <a href="/gms.html?game=pathfinder" class="text-primary hover:text-green-700 text-sm font-medium inline-flex items-center">
+                                Ver GMs <i data-feather="chevron-right" class="w-4 h-4 ml-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Game Card 3 -->
+                <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition duration-300">
+                    <div class="relative">
+                        <img class="h-48 w-full object-cover" src="http://static.photos/gaming/640x360/47" alt="Call of Cthulhu">
+                    </div>
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-4">
+                            <h3 class="font-bold text-gray-800 text-xl">Call of Cthulhu</h3>
+                        </div>
+                        
+                        <div class="flex items-center text-sm text-gray-500 mb-4">
+                            <i data-feather="users" class="w-4 h-4 mr-1"></i>
+                            <span>12 GMs available</span>
+                        </div>
+                        
+                        <p class="text-sm text-gray-600 mb-4">Experimenta el horror cósmico en este RPG de investigación basado en las obras de H.P. Lovecraft.</p>
+                        
+                        <div class="flex justify-between items-center">
+                            <span class="text-sm font-medium text-gray-700">Campañas Populares:</span>
+                            <a href="/gms.html?game=cthulhu" class="text-primary hover:text-green-700 text-sm font-medium inline-flex items-center">
+                                Ver GMs <i data-feather="chevron-right" class="w-4 h-4 ml-1"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <custom-footer></custom-footer>
+
+    <script src="components/navbar.js"></script>
+    <script src="components/footer.js"></script>
+    <script src="script.js"></script>
+    <script>
+        feather.replace();
+        
+        // Show admin controls if logged in as admin
+        if (localStorage.getItem('admin') === 'true') {
+            document.getElementById('addGameBtn').classList.remove('hidden');
+        }
+    </script>
+</body>
+</html>
